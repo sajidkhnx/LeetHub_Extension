@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LeetHub</title>
+  <style>
+    html, body {
+      height: 100%;
+      /* box-sizing: border-box; */
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #181818 0%, #232323 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      overflow: hidden;
+    }
+    .container {
+      background: #000000;
+      border-radius: 16px;
+      box-shadow: black;
+      padding: 28px 22px 22px 22px;
+      width: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    h3 {
+      margin: 0 0 18px 0;
+      font-size: 1.8em;
+      letter-spacing: 1px;
+      color: #ff9800;
+      text-align: center;
+      font-weight: 700;
+      text-shadow: 0 1px 0 #232323;
+    }
+    label {
+      font-size: 0.97em;
+      color: #fff;
+      margin-bottom: 2px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    input {
+      width: 100%;
+      padding: 9px 11px;
+      margin: 4px 0 12px 0;
+      border-radius: 8px;
+      border: 1.5px solid #ff9800;
+      background: #232323;
+      color: #fff;
+      font-size: 1em;
+      transition: border 0.2s, background 0.2s;
+      outline: none;
+      box-sizing: border-box;
+    }
+    input:focus {
+      border: 1.5px solid #4caf50;
+      background: #181818;
+    }
+    button {
+      background:#4caf50;
+      color: #181818;
+      border: none;
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.08em;
+      margin-top: 6px;
+      box-shadow: 0 2px 8px rgba(255,152,0,0.10);
+      transition: background 0.18s, transform 0.12s, color 0.18s;
+      letter-spacing: 0.2px;
+    }
+    button:hover {
+      background: orange;
+      color: #000;
+      transform: translateY(-2px) scale(1.03);
+    }
+    hr {
+      border: none;
+      border-top: 1.5px solid #4caf50;
+      margin: 18px 0 10px 0;
+    }
+    #status {
+      margin-top: 14px;
+      font-size: 0.98em;
+      color: #4caf50;
+      min-height: 18px;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+    }
+    /* Subtle fade-in animation */
+    .container {
+      animation: fadeIn 0.7s cubic-bezier(.39,.575,.565,1) both;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(16px) scale(0.98); }
+      100% { opacity: 1; transform: none; }
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 8px;
+      margin-top: -10px;
+    }
+    .logo-img {
+      width: 92px;  
+      height: 92px;
+      border-radius: 25px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      background: #232323;
+      object-fit: contain;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="leethub-logo.png" alt="LeetHub Logo" class="logo-img" />
+    </div>
+    <!-- <h3>LeetHub</h3> -->
+
+    <div>
+      <label>GitHub Username:</label>
+      <input type="text" id="ghUser" placeholder="sajidkhnx">
+
+      <label>Repository Name:</label>
+      <input type="text" id="ghRepo" placeholder="leetcode-solutions">
+
+      <label>Access Token:</label>
+      <input type="password" id="ghToken" placeholder="ghp_xxx...">
+
+      <button id="saveConfig">Save Config</button>
+    </div>
+
+    <hr>
+
+    <button id="pushBtn">Push to GitHub</button>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
